@@ -1,0 +1,343 @@
+{
+ "fps": 30,
+ "duration": 101.596,
+ "frames": 3048,
+ "scenes": [
+  {
+   "id": "s1",
+   "kind": "dark",
+   "start": 0.0,
+   "end": 5.45,
+   "trans": null,
+   "segs": [
+    1
+   ]
+  },
+  {
+   "id": "s2",
+   "kind": "light",
+   "start": 5.45,
+   "end": 18.005,
+   "trans": "wipe",
+   "segs": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s3",
+   "kind": "tint",
+   "start": 18.005,
+   "end": 33.548,
+   "trans": "fade",
+   "segs": [
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "s4",
+   "kind": "dark",
+   "start": 33.548,
+   "end": 38.48,
+   "trans": "wipe",
+   "segs": [
+    8
+   ]
+  },
+  {
+   "id": "s5",
+   "kind": "light",
+   "start": 38.48,
+   "end": 48.85,
+   "trans": "fade",
+   "segs": [
+    9
+   ]
+  },
+  {
+   "id": "s6",
+   "kind": "tint",
+   "start": 48.85,
+   "end": 58.983,
+   "trans": "fade",
+   "segs": [
+    10
+   ]
+  },
+  {
+   "id": "s7",
+   "kind": "dark",
+   "start": 58.983,
+   "end": 66.932,
+   "trans": "wipe",
+   "segs": [
+    11
+   ]
+  },
+  {
+   "id": "s8",
+   "kind": "light",
+   "start": 66.932,
+   "end": 75.513,
+   "trans": "fade",
+   "segs": [
+    12
+   ]
+  },
+  {
+   "id": "s9",
+   "kind": "tint",
+   "start": 75.513,
+   "end": 84.222,
+   "trans": "fade",
+   "segs": [
+    13
+   ]
+  },
+  {
+   "id": "s10",
+   "kind": "dark",
+   "start": 84.222,
+   "end": 96.796,
+   "trans": "wipe",
+   "segs": [
+    14
+   ]
+  },
+  {
+   "id": "s11",
+   "kind": "dark",
+   "start": 96.796,
+   "end": 101.596,
+   "trans": "fade",
+   "segs": []
+  }
+ ],
+ "segs": [
+  {
+   "seg": 1,
+   "start": 0.55,
+   "end": 4.8,
+   "phrases": [
+    {
+     "start": 0.55,
+     "end": 2.19
+    },
+    {
+     "start": 2.45,
+     "end": 4.8
+    }
+   ]
+  },
+  {
+   "seg": 2,
+   "start": 6.05,
+   "end": 8.42,
+   "phrases": [
+    {
+     "start": 6.05,
+     "end": 8.42
+    }
+   ]
+  },
+  {
+   "seg": 3,
+   "start": 8.92,
+   "end": 17.355,
+   "phrases": [
+    {
+     "start": 8.92,
+     "end": 11.498
+    },
+    {
+     "start": 11.758,
+     "end": 14.231
+    },
+    {
+     "start": 14.491,
+     "end": 17.355
+    }
+   ]
+  },
+  {
+   "seg": 4,
+   "start": 18.605,
+   "end": 20.406,
+   "phrases": [
+    {
+     "start": 18.605,
+     "end": 20.406
+    }
+   ]
+  },
+  {
+   "seg": 5,
+   "start": 20.906,
+   "end": 23.213,
+   "phrases": [
+    {
+     "start": 20.906,
+     "end": 23.213
+    }
+   ]
+  },
+  {
+   "seg": 6,
+   "start": 23.713,
+   "end": 27.294,
+   "phrases": [
+    {
+     "start": 23.713,
+     "end": 27.294
+    }
+   ]
+  },
+  {
+   "seg": 7,
+   "start": 27.794,
+   "end": 32.898,
+   "phrases": [
+    {
+     "start": 27.794,
+     "end": 30.552
+    },
+    {
+     "start": 30.812,
+     "end": 32.898
+    }
+   ]
+  },
+  {
+   "seg": 8,
+   "start": 34.148,
+   "end": 37.18,
+   "phrases": [
+    {
+     "start": 34.148,
+     "end": 37.18
+    }
+   ]
+  },
+  {
+   "seg": 9,
+   "start": 39.08,
+   "end": 48.2,
+   "phrases": [
+    {
+     "start": 39.08,
+     "end": 40.031
+    },
+    {
+     "start": 40.451,
+     "end": 41.973
+    },
+    {
+     "start": 42.393,
+     "end": 45.702
+    },
+    {
+     "start": 45.962,
+     "end": 48.2
+    }
+   ]
+  },
+  {
+   "seg": 10,
+   "start": 49.45,
+   "end": 58.333,
+   "phrases": [
+    {
+     "start": 49.45,
+     "end": 50.354
+    },
+    {
+     "start": 50.774,
+     "end": 52.063
+    },
+    {
+     "start": 52.483,
+     "end": 54.858
+    },
+    {
+     "start": 55.118,
+     "end": 58.333
+    }
+   ]
+  },
+  {
+   "seg": 11,
+   "start": 59.583,
+   "end": 66.032,
+   "phrases": [
+    {
+     "start": 59.583,
+     "end": 63.428
+    },
+    {
+     "start": 63.688,
+     "end": 66.032
+    }
+   ]
+  },
+  {
+   "seg": 12,
+   "start": 67.532,
+   "end": 74.863,
+   "phrases": [
+    {
+     "start": 67.532,
+     "end": 71.323
+    },
+    {
+     "start": 71.583,
+     "end": 74.863
+    }
+   ]
+  },
+  {
+   "seg": 13,
+   "start": 76.113,
+   "end": 83.572,
+   "phrases": [
+    {
+     "start": 76.113,
+     "end": 78.184
+    },
+    {
+     "start": 78.604,
+     "end": 80.908
+    },
+    {
+     "start": 81.168,
+     "end": 83.572
+    }
+   ]
+  },
+  {
+   "seg": 14,
+   "start": 84.822,
+   "end": 95.396,
+   "phrases": [
+    {
+     "start": 84.822,
+     "end": 85.499
+    },
+    {
+     "start": 85.759,
+     "end": 87.72
+    },
+    {
+     "start": 87.98,
+     "end": 92.625
+    },
+    {
+     "start": 92.885,
+     "end": 95.396
+    }
+   ]
+  }
+ ]
+}
