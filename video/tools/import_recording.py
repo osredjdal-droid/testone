@@ -38,11 +38,19 @@ LINES_PLAIN = [plain(l) for l in LINES]
 def decode(path):
     out = os.path.join(ROOT, "audio/vo/.recording_clean.wav")
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    af = "highpass=f=70,afftdn=nr=10:nf=-45:tn=1,lowpass=f=16000"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", path, "-ac", "1", "-ar", str(SR), "-af", af,
-                    "-c:a", "pcm_f32le", out], check=True)
-    x, _ = sf.read(out, dtype="float64")
-    os.remove(out)
+
+    def run(af):
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", path, "-ac", "1", "-ar", str(SR), "-af", af,
+                        "-c:a", "pcm_f32le", out], check=True)
+        y, _ = sf.read(out, dtype="float64")
+        os.remove(out)
+        return y
+
+    x = run("highpass=f=70")
+    floor = np.percentile(envelope_db(x), 10)
+    if floor > -60:   # audible room noise: reduce it gently; clean (studio / generated) audio is left alone
+        x = run("highpass=f=70,afftdn=nr=10:nf=-45:tn=1")
+        print(f"noise floor {floor:.0f} dB -> noise reduction applied")
     return x / (np.max(np.abs(x)) or 1) * 0.9
 
 
@@ -87,12 +95,13 @@ def transcribe(x, chunks, asr_dir):
         tokens=f"{asr_dir}/turbo-tokens.txt", language="ar", task="transcribe", num_threads=4)
     texts = []
     for a, b in chunks:
-        seg = x[int(a * SR): int(b * SR)].astype(np.float32)
+        pad = np.zeros(int(0.4 * SR), np.float32)   # Whisper drops the last word of unpadded clips
+        seg = np.concatenate([pad, x[int(max(0, a - 0.05) * SR): int((b + 0.15) * SR)].astype(np.float32), pad])
         s = rec.create_stream()
         s.accept_waveform(SR, seg)
         rec.decode_stream(s)
         texts.append(s.result.text.strip())
-    return texts
+    return texts, rec
 
 
 def align(chunk_texts, n_lines, max_span=8, skip_cost=0.08):
@@ -144,21 +153,21 @@ def align_by_pauses(chunks, n_lines):
     return groups
 
 
-def build_line(x, chunks, a, b, n_phrases, text):
+def build_line(x, chunks, a, b, n_phrases, text, thr):
     """Concatenate chunks a..b with pauses capped; return audio + phrase timings."""
     pieces, t, spans = [], 0.0, []
     for k in range(a, b + 1):
         s, e = chunks[k]
         s = max(0, s - 0.06)
-        e = min(len(x) / SR, e + 0.1)
+        e = min(len(x) / SR, e + 0.18)
         if k > a:
             gap = min(MAX_PAUSE, chunks[k][0] - chunks[k - 1][1])
             pieces.append(np.zeros(int(gap * SR)))
             t += gap
         seg = x[int(s * SR): int(e * SR)].copy()
-        fade = int(0.01 * SR)
-        seg[:fade] *= np.linspace(0, 1, fade)
-        seg[-fade:] *= np.linspace(1, 0, fade)
+        fi, fo = int(0.01 * SR), int(0.04 * SR)
+        seg[:fi] *= np.linspace(0, 1, fi)
+        seg[-fo:] *= np.linspace(1, 0, fo)
         pieces.append(seg)
         spans.append((t, t + len(seg) / SR))
         t += len(seg) / SR
@@ -166,7 +175,7 @@ def build_line(x, chunks, a, b, n_phrases, text):
     dur = len(y) / SR
     # phrase boundaries: pick internal pauses closest to the script's phrase proportions
     db = envelope_db(y)
-    runs = voiced_runs(db, threshold(db), 0.12)
+    runs = voiced_runs(db, thr, 0.12)     # same threshold as the whole recording
     pauses = [((runs[k][1] + runs[k + 1][0]) / 2, runs[k + 1][0] - runs[k][1]) for k in range(len(runs) - 1)]
     lens = [len(plain(p)) or 1 for p in text]
     total = sum(lens)
@@ -183,7 +192,7 @@ def build_line(x, chunks, a, b, n_phrases, text):
             m = max(tg, bounds[-1] + 0.2 if bounds else 0)
         used.add(m)
         bounds.append(m)
-    starts = [runs[0][0] if runs else 0.0] + bounds
+    starts = [min(runs[0][0], 0.06) if runs else 0.0] + bounds   # first word starts where the chunk does
     ends = bounds + [runs[-1][1] if runs else dur]
     phrases = [{"start": round(s, 3), "end": round(e, 3)} for s, e in zip(starts, ends)]
     return y, phrases
@@ -198,26 +207,34 @@ def main():
 
     x = decode(args.recording)
     db = envelope_db(x)
-    chunks = voiced_runs(db, threshold(db), 0.35)
+    thr = threshold(db)
+    chunks = voiced_runs(db, thr, 0.25)
     print(f"{len(x) / SR:.1f}s recording, {len(chunks)} spoken chunks")
     n = len(SEGMENTS)
     if args.asr:
-        texts = transcribe(x, chunks, args.asr)
+        texts, rec = transcribe(x, chunks, args.asr)
         groups = align(texts, n)
     else:
         if len(chunks) < n:
             sys.exit(f"found only {len(chunks)} chunks for {n} lines — pause longer between lines or pass --asr")
-        texts, groups = None, align_by_pauses(chunks, n)
+        texts, rec, groups = None, None, align_by_pauses(chunks, n)
 
     out_dir = args.out
     os.makedirs(out_dir, exist_ok=True)
     meta = []
     for j, (a, b, score) in enumerate(groups):
-        y, phrases = build_line(x, chunks, a, b, len(SEGMENTS[j]), SEGMENTS[j])
-        sf.write(os.path.join(out_dir, f"seg{j + 1:02d}.wav"), y.astype(np.float32), SR, subtype="FLOAT")
+        y, phrases = build_line(x, chunks, a, b, len(SEGMENTS[j]), SEGMENTS[j], thr)
+        sf.write(os.path.join(out_dir, f"seg{j + 1:02d}.wav"), y.astype(np.float32), SR, subtype="PCM_16")
         meta.append({"seg": j + 1, "dur": round(len(y) / SR, 3), "phrases": phrases})
-        heard = " ".join(texts[a: b + 1]) if texts else ""
-        flag = "" if score is None or score >= 0.55 else "   <-- check this line"
+        heard = ""
+        if rec is not None:   # verify the final cut of each line
+            pad = np.zeros(int(0.4 * SR), np.float32)
+            st = rec.create_stream()
+            st.accept_waveform(SR, np.concatenate([pad, y.astype(np.float32), pad]))
+            rec.decode_stream(st)
+            heard = st.result.text.strip()
+            score = difflib.SequenceMatcher(None, plain(heard), LINES_PLAIN[j], autojunk=False).ratio()
+        flag = "" if score is None or score >= 0.6 else "   <-- check this line"
         print(f"{j + 1:2d} {len(y) / SR:5.2f}s match={'-' if score is None else f'{score:.2f}'} | {heard}{flag}")
     json.dump({"sr": SR, "source": "recording", "segments": meta}, open(os.path.join(out_dir, "timing.json"), "w"), indent=1)
     print("wrote audio/vo/seg01..14.wav and timing.json — now run ./build.sh")

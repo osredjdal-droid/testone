@@ -1,211 +1,212 @@
 {
- "sr": 22050,
+ "sr": 48000,
+ "source": "recording",
  "segments": [
   {
    "seg": 1,
-   "dur": 4.25,
+   "dur": 3.04,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 1.64
+     "start": 0.06,
+     "end": 1.315
     },
     {
-     "start": 1.9,
-     "end": 4.25
+     "start": 1.315,
+     "end": 2.86
     }
    ]
   },
   {
    "seg": 2,
-   "dur": 2.37,
+   "dur": 1.72,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 2.37
+     "start": 0.06,
+     "end": 1.54
     }
    ]
   },
   {
    "seg": 3,
-   "dur": 8.435,
+   "dur": 5.82,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 2.578
+     "start": 0.06,
+     "end": 2.09
     },
     {
-     "start": 2.838,
-     "end": 5.311
+     "start": 2.09,
+     "end": 3.734
     },
     {
-     "start": 5.571,
-     "end": 8.435
+     "start": 3.734,
+     "end": 5.64
     }
    ]
   },
   {
    "seg": 4,
-   "dur": 1.801,
+   "dur": 1.19,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 1.801
+     "start": 0.06,
+     "end": 1.01
     }
    ]
   },
   {
    "seg": 5,
-   "dur": 2.307,
+   "dur": 1.99,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 2.307
+     "start": 0.06,
+     "end": 1.81
     }
    ]
   },
   {
    "seg": 6,
-   "dur": 3.581,
+   "dur": 2.23,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 3.581
+     "start": 0.06,
+     "end": 2.05
     }
    ]
   },
   {
    "seg": 7,
-   "dur": 5.104,
+   "dur": 3.79,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 2.758
+     "start": 0.06,
+     "end": 2.35
     },
     {
-     "start": 3.018,
-     "end": 5.104
+     "start": 2.35,
+     "end": 3.61
     }
    ]
   },
   {
    "seg": 8,
-   "dur": 3.032,
+   "dur": 2.11,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 3.032
+     "start": 0.06,
+     "end": 1.93
     }
    ]
   },
   {
    "seg": 9,
-   "dur": 9.12,
+   "dur": 6.74,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 0.951
+     "start": 0.06,
+     "end": 0.835
     },
     {
-     "start": 1.371,
-     "end": 2.893
+     "start": 0.835,
+     "end": 2.595
     },
     {
-     "start": 3.313,
-     "end": 6.622
+     "start": 2.595,
+     "end": 4.814
     },
     {
-     "start": 6.882,
-     "end": 9.12
+     "start": 4.814,
+     "end": 6.56
     }
    ]
   },
   {
    "seg": 10,
-   "dur": 8.883,
+   "dur": 6.89,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 0.904
+     "start": 0.06,
+     "end": 0.825
     },
     {
-     "start": 1.324,
-     "end": 2.613
+     "start": 0.825,
+     "end": 2.5
     },
     {
-     "start": 3.033,
-     "end": 5.408
+     "start": 2.5,
+     "end": 4.615
     },
     {
-     "start": 5.668,
-     "end": 8.883
+     "start": 4.615,
+     "end": 6.71
     }
    ]
   },
   {
    "seg": 11,
-   "dur": 6.449,
+   "dur": 4.48,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 3.845
+     "start": 0.06,
+     "end": 2.595
     },
     {
-     "start": 4.105,
-     "end": 6.449
+     "start": 2.595,
+     "end": 4.3
     }
    ]
   },
   {
    "seg": 12,
-   "dur": 7.331,
+   "dur": 4.9,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 3.791
+     "start": 0.06,
+     "end": 2.845
     },
     {
-     "start": 4.051,
-     "end": 7.331
+     "start": 2.845,
+     "end": 4.72
     }
    ]
   },
   {
    "seg": 13,
-   "dur": 7.459,
+   "dur": 5.74,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 2.071
+     "start": 0.06,
+     "end": 1.825
     },
     {
-     "start": 2.491,
-     "end": 4.795
+     "start": 1.825,
+     "end": 3.985
     },
     {
-     "start": 5.055,
-     "end": 7.459
+     "start": 3.985,
+     "end": 5.56
     }
    ]
   },
   {
    "seg": 14,
-   "dur": 10.574,
+   "dur": 8.14,
    "phrases": [
     {
-     "start": 0.0,
-     "end": 0.677
+     "start": 0.06,
+     "end": 0.795
     },
     {
-     "start": 0.937,
-     "end": 2.898
+     "start": 0.795,
+     "end": 2.625
     },
     {
-     "start": 3.158,
-     "end": 7.803
+     "start": 2.625,
+     "end": 6.48
     },
     {
-     "start": 8.063,
-     "end": 10.574
+     "start": 6.48,
+     "end": 7.96
     }
    ]
   }

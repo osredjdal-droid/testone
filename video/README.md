@@ -6,7 +6,7 @@ C-arc logo motif, dark → light → tint section rhythm, split headings with on
 
 | | |
 |---|---|
-| **Video** | `out/shohraty-nidham-taswiqi-9x16.mp4` — 1080×1920, 30 fps, H.264 + AAC, ~1:42 |
+| **Video** | `out/shohraty-nidham-taswiqi-9x16.mp4` — 1080×1920, 30 fps, H.264 + AAC, 1:20 |
 | **Soundtrack** | `out/soundtrack.mp3` — voice + music + sound design, mixed to −14 LUFS |
 | **Cover** | `out/cover.png` — first-frame / Reels cover |
 | **Format** | 9:16 vertical (Instagram Reels, TikTok, YouTube Shorts, Facebook) |
@@ -31,10 +31,9 @@ Charts read right-to-left (time runs right → left), matching the Arabic readin
 
 ## Voice-over
 
-Generated offline with the open-source **Piper `ar_JO-kareem`** neural voice (via sherpa-onnx).
-Darja is spelled phonetically with diacritics in `tools/vo_script.py` so the engine pronounces it
-naturally; the on-screen text stays exactly as written. `audio/vo/asr_check.txt` is a Whisper
-transcription of the generated voice, used to check every line is intelligible.
+The current voice-over is the client-supplied recording `audio/recording/voiceover.wav`, imported
+with `tools/import_recording.py` (each of the 14 lines verified with Whisper). An earlier offline
+Piper TTS version can be regenerated with `tools/synth.py` (diacritised darja in `tools/vo_script.py`).
 
 **For a natural, human voice-over** (recommended): record `RECORDING_SCRIPT.md` on a phone
 (14 lines, 2-second pause between lines, retakes are fine), then
