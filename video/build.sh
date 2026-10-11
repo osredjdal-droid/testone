@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Rebuild the Shohraty motion video end-to-end.
 #   ./build.sh                 -> uses the committed voice-over in audio/vo/
+#   RECORDING=voice.m4a ASR_MODEL=/path/to/sherpa-onnx-whisper-turbo ./build.sh -> uses a human recording (see RECORDING_SCRIPT.md)
 #   TTS_MODEL=/path/to/vits-piper-ar_JO-kareem-medium ./build.sh   -> re-synthesises the voice first
 # Needs: python3 with numpy scipy soundfile (+ sherpa-onnx for TTS), node + playwright, ffmpeg.
 set -euo pipefail
@@ -8,7 +9,9 @@ cd "$(dirname "$0")"
 PY=${PYTHON:-python3}
 OUT=out/shohraty-nidham-taswiqi-9x16.mp4
 
-if [ -n "${TTS_MODEL:-}" ]; then
+if [ -n "${RECORDING:-}" ]; then
+  "$PY" tools/import_recording.py "$RECORDING" ${ASR_MODEL:+--asr "$ASR_MODEL"}
+elif [ -n "${TTS_MODEL:-}" ]; then
   "$PY" tools/synth.py "$TTS_MODEL" audio/vo 0.92
 fi
 "$PY" tools/build_timeline.py

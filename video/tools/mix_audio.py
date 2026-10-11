@@ -177,10 +177,15 @@ def main():
         paths[name] = p
         print(f"{name}: peak {peak:.3f}")
     mix = os.path.join(ROOT, "audio/mix.wav")
+    source = json.load(open(os.path.join(ROOT, "audio/vo/timing.json"))).get("source", "tts")
+    if source == "recording":   # human voice: gentle clean-up only, de-ess, no synthetic air
+        VOICE_EQ = "[0:a]highpass=f=80,equalizer=f=250:t=q:w=1:g=-1,equalizer=f=4000:t=q:w=1.4:g=1.5,deesser=i=0.35,"
+    else:                       # band-limited TTS voice: add presence and air
+        VOICE_EQ = ("[0:a]highpass=f=75,equalizer=f=220:t=q:w=1:g=-1.5,equalizer=f=3200:t=q:w=1.2:g=2.5,"
+                    "aexciter=amount=1.2:drive=4:freq=6000,")
     fc = (
-        # voice: clean low end, a touch of presence and air, steady level
-        "[0:a]highpass=f=75,equalizer=f=220:t=q:w=1:g=-1.5,equalizer=f=3200:t=q:w=1.2:g=2.5,"
-        "aexciter=amount=1.2:drive=4:freq=6000,"
+        # voice: clean low end, presence, steady level
+        VOICE_EQ +
         "acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=3,loudnorm=I=-16:TP=-2:LRA=7,asplit=2[vo][sc];"
         # music bed sits ~16 LU under the voice and ducks further while someone speaks
         "[1:a]volume=0.55,loudnorm=I=-28:TP=-6[mus];"

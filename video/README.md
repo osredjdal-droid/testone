@@ -36,10 +36,17 @@ Darja is spelled phonetically with diacritics in `tools/vo_script.py` so the eng
 naturally; the on-screen text stays exactly as written. `audio/vo/asr_check.txt` is a Whisper
 transcription of the generated voice, used to check every line is intelligible.
 
-The voice has a Levantine/MSA colour rather than a native Algerian accent. To use a human
-recording or another voice: export one WAV per line into `audio/vo/seg01.wav … seg14.wav`
-(any sample rate), update `audio/vo/timing.json` durations (or run `tools/synth.py` with your
-own engine), then run `./build.sh` — the animation re-times itself to the new audio.
+**For a natural, human voice-over** (recommended): record `RECORDING_SCRIPT.md` on a phone
+(14 lines, 2-second pause between lines, retakes are fine), then
+
+```bash
+RECORDING=voice.m4a ASR_MODEL=/path/to/sherpa-onnx-whisper-turbo ./build.sh
+```
+
+`tools/import_recording.py` cleans the audio, matches each spoken chunk to its script line with
+Whisper (false starts are dropped), detects the phrase pauses, and the whole animation re-times
+itself to the speaker's natural pace. Any other voice file (a voice actor, ElevenLabs export…)
+works the same way.
 
 ## Rebuild
 
