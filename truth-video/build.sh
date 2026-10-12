@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # Rebuild the Shohraty «قلنالو الحقيقة» brand story end-to-end.
-#   ./build.sh          -> ElevenLabs take 3 (audio/takes/take3.mp3 + take3.words.json)
-#   TAKE=1 ./build.sh   -> another take; timeline, captions, animation and sound design all re-time themselves
+#   ./build.sh          -> ElevenLabs take 1 (audio/takes/take1.mp3 + take1.words.json)
+#   TAKE=2 ./build.sh   -> another take; timeline, captions, animation and sound design all re-time themselves
 # Needs: python3 with numpy scipy soundfile, node + playwright (Chromium), ffmpeg.
 set -euo pipefail
 cd "$(dirname "$0")"
 PY=${PYTHON:-python3}
 OUT=out/shohraty-qolnalou-el-haqiqa-9x16.mp4
 
-TAKE=${TAKE:-3} "$PY" tools/build_timeline.py
+TAKE=${TAKE:-1} "$PY" tools/build_timeline.py
 node tools/render.mjs cues audio/cues.json
 "$PY" tools/mix_audio.py
 node tools/render.mjs video out/.frames.mp4 "${WORKERS:-3}"

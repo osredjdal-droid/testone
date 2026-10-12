@@ -11,38 +11,24 @@ A motion-graphics brand story with an **ElevenLabs** voice-over in Algerian dari
 
 | | |
 |---|---|
-| **Video** | `out/shohraty-qolnalou-el-haqiqa-9x16.mp4`: 1080×1920, 30 fps, H.264 + AAC, about 1:41 |
+| **Video** | `out/shohraty-qolnalou-el-haqiqa-9x16.mp4`: 1080×1920, 30 fps, H.264 + AAC, about 1:36 |
 | **Soundtrack** | `out/soundtrack.mp3`: voice, music and sound design, mixed to −14 LUFS |
 | **Cover** | `out/cover.png`: the client-brief frame without captions |
 | **Format** | 9:16 vertical (Instagram Reels, TikTok, YouTube Shorts, Facebook) |
 
-## Voice-over: how it was chosen
+## Voice-over: Achraf (Algerian darija), picked by ear
 
-The previous video used *Amin – Algerian Darija* on `eleven_v4`, and some words came out mispronounced and robotic.
+- **Voice and model:** *Achraf* (`NVRXBDmA6I8ZAldiUWuB`), an Algerian darija voice, on ElevenLabs `eleven_multilingual_v2`.
+- **How it was picked:** the client listened to samples of four Algerian voices reading the same lines of this script and chose this one.
+- **Full script:** 4 takes; take 1 is used. Takes 2–4 are in `audio/takes/`; switch with `TAKE=2 ./build.sh`.
+- **Why take 1:** the most natural phrasing. It has one breath inside a phrase («في السوق | ما يعبّرش»), it reads «ماشي حاب» in one go, and the timings match the script word for word.
 
-### Casting test
+### Voices tried before
 
-- **What was generated:** a short passage of the tricky lines (عميل جانا… / علابالنا بلي… / نقولو نسكتو خير).
-- **Setups:** 7 voice/model combinations, 4 takes each.
-- **Voices:** Amin, Ben Chamsou, Achraf and Abu Muneeb, all Algerian.
-- **Models:** `eleven_v4` and `eleven_multilingual_v2`.
+- **Amin on `eleven_v4` (the first video):** mispronounced words. In blind transcriptions (Scribe given the audio only, not the script), غالط came out as "غالب" / "غاط" and ولينا as "ويلينا".
+- **Abu Muneeb on `multilingual_v2`:** pronounced the words correctly but did not sound Algerian enough, so the client rejected it.
 
-### How the takes were judged
-
-- **Pronunciation:** the takes were transcribed **blind** by ElevenLabs Scribe. The audio was uploaded as plain files, so the transcriber never saw the script and had to recognise each word from sound alone.
-- **Delivery:** pitch movement was measured as well, because a flat pitch is a strong sign of robotic speech.
-
-### Result
-
-- **Amin on `eleven_v4` (the old setup):** garbled words in 3 of 4 takes, e.g. غالط → "غالب" / "غاط", ولينا → "ويلينا".
-- **The same voices on `eleven_multilingual_v2`:** transcribed cleanly.
-
-### Chosen setup
-
-- **Voice and model:** *Abu Muneeb* (`jpofSqItAIlT4TLP5CrK`, a calm Algerian storytelling voice) on `eleven_multilingual_v2`.
-- **Why:** exact pronunciation in the blind test («تقولو أنو غالط»), and the widest natural pitch movement of the `multilingual_v2` voices.
-- **Full script:** 4 takes. Take 3 is used (the most pitch movement); takes 1, 2 and 4 are in `audio/takes/`.
-- **Check:** a final blind transcription of take 3 matches the script. Remaining differences are normal darija (e.g. «يبقى» heard as «يبغى», the Algerian *g*).
+ElevenLabs only lists four Algerian darija voices: Amin, Abu Muneeb, Achraf and Ben Chamsou.
 
 ### Spelling changes for the voice
 
@@ -56,22 +42,11 @@ A few spellings differ from the brief so the voice reads them correctly. The mea
 - «الي» → «اللي»
 - «تدي» → «تدّي»
 
-### One phrasing fix
+### One phrasing fix (kept as a safeguard)
 
-Every take paused after «ماشي» in «كلام ماشي حاب تسمعو», which sounds like «كلام ماشي. حاب تسمعو». The edit trims that pause (silence only), so the phrase reads in one breath. See `TIGHTEN` in `tools/script.py`.
+Earlier takes paused after «ماشي» in «كلام ماشي حاب تسمعو», which sounds like «كلام ماشي. حاب تسمعو». The edit can trim that pause (silence only) so the phrase reads in one breath; see `TIGHTEN` in `tools/script.py`. The current take reads it in one breath, so almost nothing is trimmed.
 
-### Credits
-
-About 11,700 ElevenLabs credits in total:
-
-| Item | Credits |
-|---|---|
-| Casting takes | 4,004 |
-| Blind transcriptions | ≈ 3,300 |
-| Full voice-over, 4 takes | 4,420 |
-| Timing alignments | free |
-
-All of it is in the ElevenLabs flow *«Shohraty — "قلنالو الحقيقة" VO casting + final»*.
+All takes and the voice tests are in the ElevenLabs flow *«Shohraty — "قلنالو الحقيقة" VO casting + final»*.
 
 ## Storyboard
 
@@ -96,8 +71,8 @@ Charts read right-to-left (time runs right → left), matching the Arabic readin
 ## Rebuild
 
 ```bash
-./build.sh              # take 3
-TAKE=1 ./build.sh       # another take; timeline, captions, animation and sound all re-time themselves
+./build.sh              # take 1 (Achraf)
+TAKE=2 ./build.sh       # another take; timeline, captions, animation and sound all re-time themselves
 ```
 
 ### Pipeline
