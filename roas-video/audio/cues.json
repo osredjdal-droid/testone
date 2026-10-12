@@ -1,0 +1,307 @@
+[
+ {
+  "t": 0.2,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 3.08,
+  "kind": "rise",
+  "gain": 0.8
+ },
+ {
+  "t": 6.68,
+  "kind": "rise",
+  "gain": 0.7
+ },
+ {
+  "t": 7.33,
+  "kind": "pop2",
+  "gain": 1
+ },
+ {
+  "t": 8.64,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 11.37,
+  "kind": "rise",
+  "gain": 0.5
+ },
+ {
+  "t": 14.08,
+  "kind": "rise",
+  "gain": 0.8
+ },
+ {
+  "t": 15.73,
+  "kind": "pop",
+  "gain": 0.7
+ },
+ {
+  "t": 17.46,
+  "kind": "tick",
+  "gain": 0.55
+ },
+ {
+  "t": 17.54,
+  "kind": "tick",
+  "gain": 0.55
+ },
+ {
+  "t": 17.62,
+  "kind": "tick",
+  "gain": 0.55
+ },
+ {
+  "t": 17.7,
+  "kind": "tick",
+  "gain": 0.55
+ },
+ {
+  "t": 17.78,
+  "kind": "tick",
+  "gain": 0.55
+ },
+ {
+  "t": 17.86,
+  "kind": "tick",
+  "gain": 0.55
+ },
+ {
+  "t": 19.09,
+  "kind": "pop",
+  "gain": 1
+ },
+ {
+  "t": 20.47,
+  "kind": "sparkle",
+  "gain": 1
+ },
+ {
+  "t": 22.02,
+  "kind": "stamp",
+  "gain": 1
+ },
+ {
+  "t": 25.25,
+  "kind": "rise",
+  "gain": 1
+ },
+ {
+  "t": 27.1,
+  "kind": "rise",
+  "gain": 0.5
+ },
+ {
+  "t": 28.61,
+  "kind": "rise",
+  "gain": 0.8
+ },
+ {
+  "t": 30.64,
+  "kind": "drop",
+  "gain": 1
+ },
+ {
+  "t": 32.75,
+  "kind": "pop",
+  "gain": 0.7
+ },
+ {
+  "t": 34.79,
+  "kind": "click",
+  "gain": 1
+ },
+ {
+  "t": 36.243,
+  "kind": "pop",
+  "gain": 0.7
+ },
+ {
+  "t": 37.75,
+  "kind": "thud",
+  "gain": 1
+ },
+ {
+  "t": 43.07,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 44.3,
+  "kind": "rise",
+  "gain": 0.6
+ },
+ {
+  "t": 44.57,
+  "kind": "cash",
+  "gain": 0.8
+ },
+ {
+  "t": 46.03,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 47.26,
+  "kind": "rise",
+  "gain": 0.8
+ },
+ {
+  "t": 47.53,
+  "kind": "cash",
+  "gain": 0.9
+ },
+ {
+  "t": 51.11,
+  "kind": "cash",
+  "gain": 1.1
+ },
+ {
+  "t": 53.97,
+  "kind": "pop",
+  "gain": 0.7
+ },
+ {
+  "t": 55.81,
+  "kind": "pop",
+  "gain": 0.9
+ },
+ {
+  "t": 57.29,
+  "kind": "cash",
+  "gain": 0.9
+ },
+ {
+  "t": 60.07,
+  "kind": "drop",
+  "gain": 0.7
+ },
+ {
+  "t": 61.75,
+  "kind": "rise",
+  "gain": 0.9
+ },
+ {
+  "t": 62.66,
+  "kind": "sparkle",
+  "gain": 0.7
+ },
+ {
+  "t": 64.41,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 65.79,
+  "kind": "pop",
+  "gain": 0.7
+ },
+ {
+  "t": 66.17,
+  "kind": "pop",
+  "gain": 0.8
+ },
+ {
+  "t": 66.73,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 67.57,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 68.57,
+  "kind": "pop",
+  "gain": 0.7
+ },
+ {
+  "t": 70.34,
+  "kind": "drop",
+  "gain": 0.6
+ },
+ {
+  "t": 71.74,
+  "kind": "rise",
+  "gain": 0.8
+ },
+ {
+  "t": 72.9,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 75.63,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 77.318,
+  "kind": "scratch",
+  "gain": 1
+ },
+ {
+  "t": 79.39,
+  "kind": "pop",
+  "gain": 0.7
+ },
+ {
+  "t": 81.04,
+  "kind": "thud",
+  "gain": 0.7
+ },
+ {
+  "t": 82.49,
+  "kind": "rise",
+  "gain": 0.9
+ },
+ {
+  "t": 82.95,
+  "kind": "pop",
+  "gain": 0.8
+ },
+ {
+  "t": 84.36,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 86.645,
+  "kind": "scratch",
+  "gain": 1
+ },
+ {
+  "t": 86.98,
+  "kind": "pop",
+  "gain": 1
+ },
+ {
+  "t": 88.31,
+  "kind": "cash",
+  "gain": 1
+ },
+ {
+  "t": 94.009,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 94.159,
+  "kind": "pop",
+  "gain": 0.6
+ },
+ {
+  "t": 94.509,
+  "kind": "pop2",
+  "gain": 1
+ },
+ {
+  "t": 96.209,
+  "kind": "chime",
+  "gain": 1
+ }
+]

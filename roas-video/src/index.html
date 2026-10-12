@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Shohraty — نسبة العائد ولا الربح؟</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="stage">
+
+  <!-- 01 · Hook (dark hero): can 3× beat 6×? -->
+  <section class="scene dark" id="s1">
+    <div class="glow" style="width:1300px;height:1300px;left:-110px;top:340px"></div>
+    <div class="fg"><div class="content center">
+      <span class="chip" id="s1chip"><i data-icon="help" data-size="38"></i>واش رايك؟</span>
+      <div class="eyebrow" id="s1eb" style="margin-top:34px">نسبة العائد</div>
+      <div class="numfill" id="s1a" style="font-size:330px;margin-top:20px">
+        <div class="big-num ghost">3<span class="x">×</span></div>
+        <div class="big-num fill" style="color:var(--sh-yellow)">3<span class="x">×</span></div>
+      </div>
+      <div class="h2" id="s1mid" style="margin-top:22px;font-size:76px">أحسن من</div>
+      <div class="numfill" id="s1b" style="font-size:330px;margin-top:26px">
+        <div class="big-num ghost">6<span class="x">×</span></div>
+        <div class="big-num fill" style="color:rgba(255,255,255,.92)">6<span class="x">×</span></div>
+      </div>
+    </div>
+    <div class="abs" id="s1q" style="left:150px;top:860px;width:170px;height:170px;border-radius:50%;background:var(--sh-yellow);color:var(--sh-text);display:flex;align-items:center;justify-content:center;font-size:120px;font-weight:900;box-shadow:0 18px 50px rgba(255,180,0,.35)">؟</div>
+    </div>
+  </section>
+
+  <!-- 02 · Campaign one (light): 1 000 $ in, 6 000 $ back = 6× -->
+  <section class="scene light" id="s2">
+    <div class="glow" style="width:1100px;height:1100px;left:-420px;top:-240px"></div>
+    <div class="fg"><div class="content">
+      <div style="display:flex;align-items:center;gap:30px">
+        <div class="icon-badge" id="s2icon"><i data-icon="megaphone" data-size="64"></i></div>
+        <div>
+          <div class="eyebrow" id="s2eb">مثال</div>
+          <h2 class="h2" id="s2h" style="font-size:66px;line-height:1.35">حملة <span class="k">إشهارية</span></h2>
+        </div>
+      </div>
+      <div class="card" id="s2card" style="margin-top:40px;padding:38px 44px;display:flex;flex-direction:column;gap:38px">
+        <div class="row" id="s2r1">
+          <div class="row-head"><span class="lbl"><span class="ic"><i data-icon="wallet" data-size="34"></i></span>صرفت</span><span class="val" id="s2v1">0 $</span></div>
+          <div class="track"><div class="fill soft" id="s2f1"></div></div>
+        </div>
+        <div class="row" id="s2r2">
+          <div class="row-head"><span class="lbl"><span class="ic"><i data-icon="banknote" data-size="34"></i></span>رجعلك</span><span class="val k" id="s2v2">0 $</span></div>
+          <div class="track"><div class="fill" id="s2f2"></div></div>
+        </div>
+      </div>
+      <div id="s2coins" style="margin-top:46px;height:120px;display:flex;align-items:center;gap:26px">
+        <div class="coin ghost" id="s2c0">$</div>
+        <svg id="s2arr" width="120" height="40" viewBox="0 0 120 40" style="flex:none;overflow:visible"><path d="M112 20 H12 M30 4 L10 20 L30 36" fill="none" stroke="#653DC7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div id="s2six" style="display:flex;gap:10px"></div>
+      </div>
+      <div class="ratio" id="s2ratio" style="margin-top:46px">
+        <span class="lbl"><i data-icon="percent" data-size="44"></i>نسبة العائد</span>
+        <span class="big-num">6<span class="x" style="color:var(--sh-yellow)">×</span></span>
+      </div>
+    </div>
+    <div class="abs" id="s2stamp" style="left:370px;top:1196px"><span class="stamp"><i data-icon="star" data-size="40" data-sw="2.6"></i>أحسن حملة</span></div>
+    </div>
+  </section>
+
+  <!-- 03 · Scaling up (tint): 4 000 $ in, 12 000 $ back = 3× -->
+  <section class="scene tint" id="s3">
+    <div class="glow" style="width:1000px;height:1000px;left:480px;top:900px"></div>
+    <div class="fg"><div class="content">
+      <div class="eyebrow" id="s3eb">بعدها</div>
+      <h2 class="h2" id="s3h" style="line-height:1.35">كبّرت <span class="k">الميزانية</span></h2>
+      <div class="card" id="s3slcard" style="margin-top:30px;padding:30px 40px 6px;position:relative">
+        <div class="row-head"><span class="lbl"><span class="ic"><i data-icon="sliders" data-size="34"></i></span>الميزانية</span><span class="val k" id="s3bv">1 000 $</span></div>
+        <div class="slider" id="s3sl"><div class="rail"></div><div class="on" id="s3on"></div><div class="knob" id="s3knob"></div></div>
+      </div>
+      <div class="card" id="s3card" style="margin-top:26px;padding:34px 44px;display:flex;flex-direction:column;gap:32px">
+        <div class="row" id="s3r1">
+          <div class="row-head"><span class="lbl"><span class="ic"><i data-icon="wallet" data-size="34"></i></span>صرفت</span><span class="val" id="s3v1">0 $</span></div>
+          <div class="track"><div class="fill soft" id="s3f1"></div></div>
+        </div>
+        <div class="row" id="s3r2">
+          <div class="row-head"><span class="lbl"><span class="ic"><i data-icon="banknote" data-size="34"></i></span>رجعلك</span><span class="val k" id="s3v2">0 $</span></div>
+          <div class="track"><div class="fill" id="s3f2"></div></div>
+        </div>
+      </div>
+      <div class="ratio" id="s3ratio" style="margin-top:28px;padding:22px 46px">
+        <span class="lbl"><i data-icon="percent" data-size="44"></i>نسبة العائد</span>
+        <span style="display:flex;align-items:center;gap:26px">
+          <span class="chip" id="s3down" style="background:rgba(255,255,255,.14);color:#fff;font-size:30px;padding:8px 20px"><i data-icon="arrowDown" data-size="30" data-sw="3"></i><span class="num">÷2</span></span>
+          <span class="big-num" style="font-size:132px;position:relative;width:200px;height:120px;display:inline-block">
+            <span id="s3r6" style="position:absolute;inset:0">6<span class="x" style="color:var(--sh-yellow)">×</span></span>
+            <span id="s3r3" style="position:absolute;inset:0">3<span class="x" style="color:var(--sh-yellow)">×</span></span>
+          </span>
+        </span>
+      </div>
+    </div>
+    <span class="chip warn abs" id="s3warn" style="left:96px;top:1062px;font-size:32px;box-shadow:0 10px 26px rgba(154,93,0,.18);background:#FFF4E0"><i data-icon="alert" data-size="32"></i>الحملة بدات تضعف؟</span>
+    <span class="chip ink abs" id="s3fix" style="left:110px;top:345px;font-size:32px"><i data-icon="minus" data-size="30" data-sw="3"></i>«تصلح» الوضع</span>
+    <svg class="cursor" id="s3cur" viewBox="0 0 24 24" fill="#1A1A2E" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"><path d="M4.04 4.69a.5.5 0 0 1 .65-.65l16 6.5a.5.5 0 0 1-.06.95l-6.12 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.12a.5.5 0 0 1-.95.06z"/></svg>
+    </div>
+  </section>
+
+  <!-- 04 · The mistake (dark statement) -->
+  <section class="scene dark" id="s4">
+    <div class="glow" style="width:1400px;height:1400px;left:-160px;top:200px"></div>
+    <div class="fg"><div class="content center" style="justify-content:center">
+      <div id="s4x" style="width:230px;height:230px;border-radius:50%;background:rgba(255,77,158,.16);display:flex;align-items:center;justify-content:center">
+        <div style="width:160px;height:160px;border-radius:50%;background:#FF4D9E;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 18px 50px rgba(255,77,158,.40)"><i data-icon="x" data-size="96" data-sw="3"></i></div>
+      </div>
+      <h1 class="h1 say" id="s4h" data-at="13.0" style="font-size:150px;margin-top:60px">هنا <span class="k">الغلطة</span>.</h1>
+    </div></div>
+  </section>
+
+  <!-- 05 · Real profit (light): 5 000 $ vs 8 000 $ -->
+  <section class="scene light" id="s5">
+    <div class="glow" style="width:1000px;height:1000px;left:-380px;top:700px"></div>
+    <div class="fg"><div class="content">
+      <h2 class="h2 say" id="s5h" data-at="14.0" style="line-height:1.35">شوف <span class="k">الربح الحقيقي</span>،</h2>
+      <p class="lead say" id="s5sub" data-at="14.3" style="font-size:52px;font-weight:700">مش النسبة بركة.</p>
+      <div class="card" id="s5card" style="margin-top:34px;height:800px;position:relative;overflow:hidden">
+        <div class="abs" id="s5base" style="left:44px;right:44px;top:668px;height:4px;border-radius:4px;background:rgba(101,61,199,.18)"></div>
+        <svg class="abs" id="s5svg" viewBox="0 0 888 800" style="left:0;top:0;width:888px;height:800px;overflow:visible"></svg>
+        <div class="col" id="s5a" style="left:530px;top:0;height:670px;justify-content:flex-end">
+          <span class="pv" id="s5pa">0 $</span><span class="eq" id="s5ea">6 000 − 1 000</span><div class="bar soft" id="s5ba" style="height:0"></div>
+        </div>
+        <div class="col" id="s5b" style="left:70px;top:0;height:670px;justify-content:flex-end">
+          <span class="pv" id="s5pb">0 $</span><span class="eq" id="s5eb">12 000 − 4 000</span><div class="bar" id="s5bb" style="height:0"></div>
+        </div>
+        <span class="chip" id="s5la" style="position:absolute;top:696px;left:680px;transform:translateX(-50%)">نسبة <span class="num">6×</span></span>
+        <span class="chip" id="s5lb" style="position:absolute;top:696px;left:220px;transform:translateX(-50%)">نسبة <span class="num">3×</span></span>
+        <div class="abs" id="s5plus" style="left:455px;top:338px;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:6px">
+          <span class="chip solid" style="font-size:36px;padding:8px 24px;box-shadow:0 12px 30px rgba(101,61,199,.35)"><span class="num">+3 000 $</span></span>
+          <span style="font-size:34px;font-weight:800;color:var(--sh-purple)">زيادة</span>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 06 · Ratio vs profit (dark) -->
+  <section class="scene dark" id="s6">
+    <div class="glow" style="width:1300px;height:1300px;left:-500px;top:-200px"></div>
+    <div class="fg"><div class="content" style="top:400px">
+      <div class="glass def" id="s6a">
+        <div class="top">
+          <span class="ic" style="background:rgba(255,255,255,.10);color:#fff"><i data-icon="percent" data-size="60"></i></span>
+          <div style="flex:1"><div class="t">نسبة العائد</div></div>
+          <span class="chip" id="s6ta" style="font-size:36px">رقم <span class="k">نسبي</span></span>
+        </div>
+        <div class="formula" id="s6fa"><span class="term">المداخيل</span><span class="op">÷</span><span class="term">الميزانية</span></div>
+      </div>
+      <div class="glass def" id="s6b" style="margin-top:40px;border-color:rgba(255,180,0,.55);box-shadow:0 0 0 1px rgba(255,180,0,.2),0 24px 60px rgba(255,180,0,.10)">
+        <div class="top">
+          <span class="ic" style="background:var(--sh-yellow);color:var(--sh-text)"><i data-icon="banknote" data-size="60"></i></span>
+          <div style="flex:1"><div class="t">الربح</div></div>
+          <span class="chip yellow" id="s6tb" style="font-size:36px">رقم حقيقي</span>
+        </div>
+        <div class="formula" id="s6fb"><span class="term">المداخيل</span><span class="op">−</span><span class="term">الميزانية</span></div>
+        <div class="formula" id="s6fc"><span class="op" style="color:var(--sh-yellow)">=</span><span class="term" style="background:rgba(255,180,0,.16);color:var(--sh-yellow);font-size:44px;font-weight:800">الفائدة الصافية</span></div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 07 · Ratio down, profit up (tint) -->
+  <section class="scene tint" id="s7">
+    <div class="glow" style="width:1100px;height:1100px;left:-10px;top:560px"></div>
+    <div class="fg"><div class="content">
+      <h2 class="h2" id="s7h" style="line-height:1.4"><span id="s7h1">النسبة تنزل،</span><br><span id="s7h2">والربح <span class="k">يكبر</span></span></h2>
+      <div class="card" id="s7card" style="margin-top:30px;padding:30px 30px 16px">
+        <div style="display:flex;gap:40px;justify-content:center;font-size:34px;font-weight:800">
+          <span id="s7lg1" style="display:inline-flex;align-items:center;gap:14px;color:var(--sh-warn-ink)"><span style="width:52px;border-top:7px dashed #E08600"></span>نسبة العائد</span>
+          <span id="s7lg2" style="display:inline-flex;align-items:center;gap:14px;color:var(--sh-purple)"><span style="width:52px;height:9px;border-radius:9px;background:#653DC7"></span>الربح</span>
+        </div>
+        <svg id="s7svg" viewBox="0 0 828 560" style="width:100%;height:auto;display:block;overflow:visible;margin-top:6px"></svg>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 08 · Wider, colder audience (light) -->
+  <section class="scene light" id="s8">
+    <div class="glow" style="width:1100px;height:1100px;left:420px;top:-300px"></div>
+    <div class="fg"><div class="content">
+      <h2 class="h2" id="s8h" style="font-size:66px;line-height:1.4">جمهور <span class="k">أوسع</span>، أبرد شوية</h2>
+      <div id="s8viz" style="position:relative;height:640px;margin-top:6px">
+        <svg id="s8svg" viewBox="0 0 888 640" style="position:absolute;inset:0;width:888px;height:640px;overflow:visible"></svg>
+        <span class="chip abs" id="s8k0" style="right:0;top:56px"><i data-icon="flame" data-size="32"></i>ساخن</span>
+        <span class="chip abs" id="s8k1" style="right:0;top:196px"><i data-icon="users" data-size="32"></i>أوسع</span>
+        <span class="chip abs" id="s8k2" style="right:0;top:336px"><i data-icon="snowflake" data-size="32"></i>أبرد شوية</span>
+        <span class="chip warn abs" id="s8k3" style="right:0;top:476px"><i data-icon="userX" data-size="32"></i>أصعب يتقنع</span>
+      </div>
+      <div class="card" id="s8meters" style="padding:28px 40px;display:flex;flex-direction:column;gap:22px">
+        <div class="row" id="s8q">
+          <div class="row-head" style="font-size:38px"><span class="lbl">الجودة</span><span class="chip warn" id="s8qc" style="font-size:30px;padding:4px 20px"><i data-icon="arrowDown" data-size="28" data-sw="3"></i>تنقص</span></div>
+          <div class="track" style="height:34px"><div class="fill soft" id="s8qf"></div></div>
+        </div>
+        <div class="row" id="s8n">
+          <div class="row-head" style="font-size:38px"><span class="lbl">الكمية</span><span class="chip solid" id="s8nc" style="font-size:30px;padding:4px 20px"><i data-icon="arrowUp" data-size="28" data-sw="3"></i>تزيد</span></div>
+          <div class="track" style="height:34px"><div class="fill" id="s8nf"></div></div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 09 · Why businesses stay small (tint) -->
+  <section class="scene tint" id="s9">
+    <div class="glow" style="width:1000px;height:1000px;left:-300px;top:1000px"></div>
+    <div class="fg"><div class="content">
+      <div style="display:flex;align-items:center;gap:28px">
+        <div class="icon-badge" id="s9icon"><i data-icon="store" data-size="62"></i></div>
+        <h2 class="h2 say" id="s9h" data-at="24.0" style="font-size:60px;line-height:1.4">غالبية البيزنسات<br>تبقى <span class="k">صغيرة</span></h2>
+      </div>
+      <div id="s9not" style="margin-top:28px;display:flex;align-items:center;gap:22px">
+        <span class="lead" id="s9m" style="font-weight:800;color:var(--sh-text)">ماشي لأن</span>
+        <span class="chip bad" id="s9chip" style="position:relative;font-size:36px">نسبة العائد ضعيفة<span id="s9strike" style="position:absolute;left:18px;right:18px;top:50%;height:5px;margin-top:-2px;border-radius:5px;background:#D1005F;transform-origin:100% 50%"></span></span>
+      </div>
+      <div class="card" id="s9card" style="margin-top:34px;padding:26px 26px 10px;position:relative">
+        <svg id="s9svg" viewBox="0 0 836 600" style="width:100%;height:auto;display:block;overflow:visible"></svg>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 10 · The rule (dark) -->
+  <section class="scene dark" id="s10">
+    <div class="glow" style="width:1400px;height:1400px;left:-200px;top:-200px"></div>
+    <div class="fg"><div class="content" style="top:330px">
+      <div class="eyebrow" id="s10eb">القاعدة</div>
+      <div class="glass rule" id="s10a" style="margin-top:40px">
+        <span class="mark" style="background:rgba(255,77,158,.16);color:#FF4D9E"><i data-icon="x" data-size="64" data-sw="3"></i></span>
+        <div><div class="sub">ماتحوسش غير إذا</div><div class="txt" id="s10at" style="position:relative;display:inline-block">نسبة العائد نقصت<span id="s10strike" style="position:absolute;left:0;right:0;top:56%;height:6px;border-radius:6px;background:#FF4D9E;transform-origin:100% 50%"></span></div></div>
+      </div>
+      <div class="glass rule" id="s10b" style="margin-top:34px;border-color:rgba(255,180,0,.6);box-shadow:0 24px 60px rgba(255,180,0,.12)">
+        <span class="mark" style="background:var(--sh-yellow);color:var(--sh-text)"><i data-icon="check" data-size="68" data-sw="3.2"></i></span>
+        <div><div class="sub">حوس إذا</div><div class="txt" style="font-size:96px">الربح <span class="k">زاد</span></div></div>
+      </div>
+      <svg id="s10svg" viewBox="0 0 888 260" style="width:888px;height:260px;margin-top:40px;overflow:visible"></svg>
+    </div></div>
+  </section>
+
+  <!-- 11 · Your turn (light) -->
+  <section class="scene light" id="s11">
+    <div class="glow" style="width:1100px;height:1100px;left:-420px;top:700px"></div>
+    <div class="fg"><div class="content" style="top:300px">
+      <div class="eyebrow" id="s11eb">دورك</div>
+      <div class="card q-card" id="s11card" style="margin-top:30px">
+        <div class="q-head">
+          <span style="width:96px;height:96px;border-radius:50%;background:var(--sh-grad-card);display:flex;align-items:center;justify-content:center;flex:none"><img src="assets/logo-icon-white.svg" style="height:50px;width:auto" alt=""></span>
+          <div><div class="who">شهرتي</div><div class="when">سؤال اليوم</div></div>
+        </div>
+        <h2 class="h2 say" id="s11q" data-at="28.2" data-map="2,3,5,6,7,9,9" style="font-size:66px;line-height:1.45">حبست حملة لأن نسبة العائد <span class="k">نقصت</span>؟</h2>
+        <div style="display:flex;gap:24px">
+          <div class="opt" id="s11y"><i data-icon="check" data-size="40" data-sw="3"></i>إيه</div>
+          <div class="opt" id="s11n"><i data-icon="x" data-size="40" data-sw="3"></i>لا</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:26px;margin-top:44px">
+        <div class="cta" id="s11cta"><i data-icon="message" data-size="44" data-sw="2.6"></i>جاوبنا في التعليقات</div>
+        <div class="typing" id="s11typing"><i></i><i></i><i></i></div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- 12 · End card (dark footer) -->
+  <section class="scene dark" id="s12">
+    <div class="glow" style="width:1400px;height:1400px;left:-160px;top:200px"></div>
+    <div class="fg"><div class="content center" style="top:330px;height:1260px;justify-content:space-between">
+      <img id="s12logo" src="assets/logo-full-white.svg" style="height:120px;width:auto" alt="">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:30px">
+        <div class="eyebrow" id="s12eb">أنظمة توليد العملاء</div>
+        <h1 class="h1" id="s12h" style="font-size:92px;line-height:1.45">نبنيو <span class="k">أنظمة</span><br>تكبّر الربح.</h1>
+        <div class="cta" id="s12cta" style="margin-top:26px">احجز مكالمتك الاستراتيجية<i data-icon="arrowLeft" data-size="44" data-sw="2.8"></i></div>
+      </div>
+      <div class="contact" id="s12c">
+        <span><span class="wa-dot"></span><span class="num">+213 560 22 74 51</span></span>
+        <span class="num">shohraty.com</span>
+        <span class="num" style="color:#fff">@shohraty</span>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- persistent: logo bug, captions, brand-bar wipe -->
+  <div id="bug">
+    <img id="bugW" src="assets/logo-full-white.svg" alt="">
+    <img id="bugP" src="assets/logo-full-purple.svg" alt="">
+  </div>
+  <div id="captions"></div>
+  <div id="wipe">
+    <div style="background:#FFB400"></div>
+    <div style="background:#653DC7"></div>
+    <div style="background:#2D1B69"></div>
+  </div>
+</div>
+
+<script src="timeline.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>
